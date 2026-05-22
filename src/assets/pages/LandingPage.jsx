@@ -1,15 +1,13 @@
-import Header from "../components/Header";
-import HeroSection from "../components/HeroSection";
-import MainSection from "../components/MainSection";
-const LandingPage = () => {
+import HeroSection from '../components/HeroSection'
+import MainSection from '../components/MainSection'
 
-    return(
-        <div className="relative w-full flex flex-col">
-        <Header />
-        <HeroSection />
-        <MainSection />
-        </div>
-    )
+const LandingPage = () => {
+  return (
+    <div className="relative w-full flex flex-col">
+      <HeroSection />
+      <MainSection />
+    </div>
+  )
 }
 
 export default LandingPage;
