@@ -8,7 +8,7 @@ import { BiCodeAlt } from "react-icons/bi";
 import { BsArrowRight, BsStars } from "react-icons/bs";
 import { useState, useEffect } from "react";
 
-const MainSection = () => {
+const MainSection = ({ onNavigate }) => {
     const [isVisible, setIsVisible] = useState({});
 
     useEffect(() => {
@@ -36,7 +36,7 @@ const MainSection = () => {
             </div>
 
             {/* Main container with proper spacing from absolute HeroSection */}
-            <div className="relative pt-[620px] md:pt-[450px] lg:pt-[400px]">
+            <div className="relative pt-20 md:pt-24 lg:pt-28">
                 {/* Value Proposition Card */}
                 <div data-observe id="value-prop" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
                     <div className={`bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-1000 ${isVisible['value-prop'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -281,14 +281,19 @@ const MainSection = () => {
                         </p>
                         
                         <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center mb-12 transition-all duration-700 delay-400 ${isVisible['cta'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                            <button className="group relative inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                            <button
+                                onClick={() => onNavigate && onNavigate('contact')}
+                                className="group relative inline-flex items-center gap-2 bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105"
+                            >
                                 <span className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                                 <span className="relative flex items-center gap-2">
                                     Let's Work Together
                                     <BsArrowRight className="group-hover:translate-x-1 transition-transform" />
                                 </span>
                             </button>
-                            <button className="inline-flex items-center gap-2 bg-transparent border-2 border-white/30 px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 transition-all duration-300">
+                            <button 
+                                onClick={() => onNavigate && onNavigate('portfolio')}
+                                className="inline-flex items-center gap-2 bg-transparent border-2 border-white/30 px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 transition-all duration-300">
                                 View Our Portfolio
                             </button>
                         </div>

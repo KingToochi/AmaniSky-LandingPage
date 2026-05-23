@@ -1,11 +1,11 @@
 import HeroSection from '../components/HeroSection'
 import MainSection from '../components/MainSection'
 
-const LandingPage = () => {
+const LandingPage = ({ onNavigate }) => {
   return (
     <div className="relative w-full flex flex-col">
-      <HeroSection />
-      <MainSection />
+      <HeroSection onNavigate={onNavigate} />
+      <MainSection onNavigate={onNavigate} />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { FaLaptopCode, FaPaintBrush, FaBullhorn, FaChartLine } from 'react-icons/fa';
 
-const Service = () => {
+const Service = ({ onNavigate, onOpenQuote }) => {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 pt-32 pb-16 px-6 sm:px-10 lg:px-16">
       <div className="max-w-6xl mx-auto">
@@ -60,12 +60,18 @@ const Service = () => {
               <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-slate-900">Choose the service that fits your pace.</h2>
             </div>
             <div className="space-y-4 sm:space-y-0 sm:flex sm:items-center sm:gap-4">
-              <a href="#contact" className="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-4 text-white font-semibold shadow-lg hover:bg-blue-700 transition">
+                <button
+                onClick={() => onNavigate && onNavigate('contact')}
+                className="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-4 text-white font-semibold shadow-lg hover:bg-blue-700 transition"
+              >
                 Talk to our team
-              </a>
-              <a href="#contact" className="inline-flex items-center justify-center rounded-full border border-slate-200 px-6 py-4 text-slate-700 font-semibold hover:bg-slate-50 transition">
+              </button>
+              <button
+                onClick={() => onOpenQuote && onOpenQuote()}
+                className="inline-flex items-center justify-center rounded-full border border-slate-200 px-6 py-4 text-slate-700 font-semibold hover:bg-slate-50 transition"
+              >
                 Get a quote
-              </a>
+              </button>
             </div>
           </div>
         </div>

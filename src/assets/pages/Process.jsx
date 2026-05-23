@@ -1,6 +1,6 @@
 import { FaRegLightbulb, FaTasks, FaRocket, FaHandshake } from 'react-icons/fa';
 
-const Process = () => {
+const Process = ({ onNavigate }) => {
   return (
     <div className="min-h-screen bg-white text-slate-900 pt-32 pb-16 px-6 sm:px-10 lg:px-16">
       <div className="max-w-6xl mx-auto">
@@ -67,12 +67,18 @@ const Process = () => {
               <h2 className="mt-4 text-3xl sm:text-4xl font-bold">Simple communication. Clear milestones. Smooth delivery.</h2>
             </div>
             <div className="space-y-4 sm:space-y-0 sm:flex sm:items-center sm:gap-4">
-              <a href="#contact" className="inline-flex items-center justify-center rounded-full bg-white text-blue-700 px-6 py-4 font-semibold shadow-lg hover:bg-slate-100 transition">
+              <button
+                onClick={() => onNavigate && onNavigate('contact')}
+                className="inline-flex items-center justify-center rounded-full bg-white text-blue-700 px-6 py-4 font-semibold shadow-lg hover:bg-slate-100 transition"
+              >
                 Start your project
-              </a>
-              <a href="#contact" className="inline-flex items-center justify-center rounded-full border border-white/50 px-6 py-4 text-white font-semibold hover:bg-white/10 transition">
+              </button>
+              <button
+                onClick={() => onNavigate && onNavigate('contact')}
+                className="inline-flex items-center justify-center rounded-full border border-white/50 px-6 py-4 text-white font-semibold hover:bg-white/10 transition"
+              >
                 Request a proposal
-              </a>
+              </button>
             </div>
           </div>
         </div>

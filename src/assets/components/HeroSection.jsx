@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles, Shield, Zap, ChevronDown } from 'lucide-react';
 
-const HeroSection = () => {
+const HeroSection = ({ onNavigate }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -111,25 +111,28 @@ const HeroSection = () => {
 
                             {/* CTA Buttons */}
                             <div className="flex flex-col sm:flex-row gap-4 mt-6 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-                                <button className="group relative inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                                <button
+                                  onClick={() => onNavigate?.('contact')}
+                                  className="group relative inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105"
+                                >
                                     <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                                     <span className="absolute inset-0 opacity-0 group-hover:opacity-100">
                                         <span className="absolute top-0 left-0 w-full h-full bg-white/20 transform -skew-y-3 group-hover:animate-shine"></span>
                                     </span>
-                                    <span className="relative flex items-center gap-2">
+                                    <span className="relative z-10 flex items-center gap-2">
                                         Start Your Project
                                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                                     </span>
                                 </button>
-                                <button className="group relative inline-flex items-center justify-center gap-2 bg-white/90 backdrop-blur-sm text-gray-900 px-8 py-4 rounded-full text-lg font-semibold border-2 border-gray-200 hover:border-blue-300 hover:bg-white transition-all duration-300 hover:shadow-xl">
+                                {/* <button className="group relative inline-flex items-center justify-center gap-2 bg-white/90 backdrop-blur-sm text-gray-900 px-8 py-4 rounded-full text-lg font-semibold border-2 border-gray-200 hover:border-blue-300 hover:bg-white transition-all duration-300 hover:shadow-xl">
                                     <span className="relative z-10">Watch Demo</span>
                                     <span className="relative z-10 text-blue-600 group-hover:translate-x-1 transition-transform">→</span>
-                                </button>
+                                </button> */}
                             </div>
 
                             {/* Trust badges */}
                             <div className="flex flex-wrap items-center gap-6 mt-8 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-                                {['100+ Projects', '50+ Clients', '24/7 Support'].map((item, index) => (
+                                {['20+ Projects', '50+ Clients', '24/7 Support'].map((item, index) => (
                                     <div key={index} className="flex items-center gap-2">
                                         <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                                         <span className="text-sm text-gray-600 font-medium">{item}</span>
@@ -208,7 +211,7 @@ const HeroSection = () => {
                                         <div className="mt-6 pt-6 border-t border-gray-100">
                                             <div className="flex justify-between text-sm">
                                                 <div>
-                                                    <span className="block text-2xl font-bold text-gray-900">150+</span>
+                                                    <span className="block text-2xl font-bold text-gray-900">20+</span>
                                                     <span className="text-gray-500">Projects</span>
                                                 </div>
                                                 <div>
