@@ -299,12 +299,12 @@ const MainSection = ({ onNavigate }) => {
                         </div>
 
                         <div className={`flex flex-col sm:flex-row gap-8 justify-center items-center text-gray-300 transition-all duration-700 delay-600 ${isVisible['cta'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                            <a href="tel:+2349031183272" className="flex items-center gap-2 hover:text-white transition-colors">
+                            {/* <a href="tel:+2349031183272" className="flex items-center gap-2 hover:text-white transition-colors">
                                 <span className="text-2xl">📞</span>
                                 +234 903 118 3272
                             </a>
-                            <span className="hidden sm:block text-gray-600">|</span>
-                            <a href="mailto:kingtoochukwuumoke@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors">
+                            <span className="hidden sm:block text-gray-600">|</span> */}
+                            <a href="mailto:contact@amanisky.com" className="flex items-center gap-2 hover:text-white transition-colors">
                                 <span className="text-2xl">✉️</span>
                                 Email Us
                             </a>
