@@ -267,7 +267,7 @@ const MainSection = ({ onNavigate }) => {
 
                 {/* CTA Section */}
                 <div data-observe id="cta" className="relative bg-gray-900 text-white py-24 overflow-hidden">
-                    <div className="absolute inset-0 opacity-10">
+                    <div className="absolute inset-0 opacity-10 pointer-events-none">
                         <div className="absolute -right-20 -top-20 w-64 h-64 bg-white rounded-full"></div>
                         <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-white rounded-full"></div>
                     </div>
@@ -299,12 +299,7 @@ const MainSection = ({ onNavigate }) => {
                         </div>
 
                         <div className={`flex flex-col sm:flex-row gap-8 justify-center items-center text-gray-300 transition-all duration-700 delay-600 ${isVisible['cta'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                            {/* <a href="tel:+2349031183272" className="flex items-center gap-2 hover:text-white transition-colors">
-                                <span className="text-2xl">📞</span>
-                                +234 903 118 3272
-                            </a>
-                            <span className="hidden sm:block text-gray-600">|</span> */}
-                            <a href="mailto:contact@amanisky.com" className="flex items-center gap-2 hover:text-white transition-colors">
+                            <a href="mailto:contact@amanisky.tech" className="flex items-center gap-2 hover:text-white transition-colors">
                                 <span className="text-2xl">✉️</span>
                                 Email Us
                             </a>

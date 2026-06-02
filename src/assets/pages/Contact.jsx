@@ -18,24 +18,19 @@ const Contact = () => {
             <div className="space-y-6">
               {[
                 {
-                  icon: <FaPhone className="w-5 h-5 text-blue-600" />,
-                  title: 'Phone',
-                  detail: '+234 903 118 3272'
-                },
-                {
                   icon: <FaEnvelope className="w-5 h-5 text-blue-600" />,
                   title: 'Email',
-                  detail: 'kingtoochukwuumoke@gmail.com'
+                  detail: 'contact@amanisky.tech'
                 },
-                {
-                  icon: <FaMapMarkerAlt className="w-5 h-5 text-blue-600" />,
-                  title: 'Location',
-                  detail: 'Lagos, Nigeria'
-                },
+                // {
+                //   icon: <FaMapMarkerAlt className="w-5 h-5 text-blue-600" />,
+                //   title: 'Location',
+                //   detail: 'Lagos, Nigeria'
+                // },
                 {
                   icon: <FaClock className="w-5 h-5 text-blue-600" />,
                   title: 'Availability',
-                  detail: 'Weekdays 9AM – 6PM WAT'
+                  detail: '24/7 Support'
                 }
               ].map((item) => (
                 <div key={item.title} className="flex items-start gap-4 rounded-3xl bg-slate-50 p-5 border border-slate-200">
