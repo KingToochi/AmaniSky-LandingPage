@@ -59,7 +59,7 @@ const About = () => {
         <div className="mt-16 rounded-[2rem] border border-slate-200 bg-white p-10 shadow-xl">
           <div className="grid gap-8 md:grid-cols-3 text-center">
             <div>
-              <p className="text-4xl font-bold text-blue-600">150+</p>
+              <p className="text-4xl font-bold text-blue-600">20+</p>
               <p className="mt-2 text-slate-600">Projects delivered</p>
             </div>
             <div>

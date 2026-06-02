@@ -1,8 +1,15 @@
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaEnvelope, FaClock } from 'react-icons/fa';
 
 const Contact = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // TODO: handle form submission here
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-100 to-white text-slate-900 pt-32 pb-16 px-6 sm:px-10 lg:px-16">
+    <form
+    action="https://formspree.io/f/mkoedprb"
+    onSubmit={handleSubmit} className="min-h-screen bg-gradient-to-b from-slate-100 to-white text-slate-900 pt-32 pb-16 px-6 sm:px-10 lg:px-16">
       <div className="max-w-6xl mx-auto">
         <div className="mb-14 text-center">
           <p className="text-sm uppercase tracking-[0.35em] text-blue-600 font-semibold">Contact</p>
@@ -46,7 +53,7 @@ const Contact = () => {
 
           <div className="rounded-[2rem] bg-slate-900 p-10 shadow-2xl text-white">
             <h2 className="text-3xl font-semibold mb-6">Request a consultation</h2>
-            <form className="space-y-6">
+            <div className="space-y-6">
               <label className="block">
                 <span className="text-sm text-slate-200">Name</span>
                 <input type="text" placeholder="Your name" className="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-5 py-4 text-white outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
@@ -59,14 +66,14 @@ const Contact = () => {
                 <span className="text-sm text-slate-200">Message</span>
                 <textarea rows="5" placeholder="Tell us about your project" className="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-5 py-4 text-white outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"></textarea>
               </label>
-              <button type="button" className="w-full rounded-full bg-blue-500 px-6 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-blue-400">
+              <button type="submit" className="w-full rounded-full bg-blue-500 px-6 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-blue-400">
                 Send message
               </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
