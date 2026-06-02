@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FaEnvelope, FaClock } from 'react-icons/fa';
 import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
+  const formRef = useRef(null);
   const [state, handleSubmit] = useForm("mkoedprb");
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -10,27 +11,24 @@ const Contact = () => {
     let timer;
     if (state.succeeded) {
       setShowSuccess(true);
+      formRef.current?.reset();
       timer = setTimeout(() => setShowSuccess(false), 4000);
-      return (
-        <p className="mb-10 rounded-3xl border border-green-200 bg-green-50 px-6 py-4 text-green-900 shadow-sm">
-          <p className="font-semibold">Thanks for your message!</p>
-          <p className="mt-1 text-sm text-green-700">We’ll be in touch shortly.</p>
-        </p>
-      )
     }
     return () => clearTimeout(timer);
   }, [state.succeeded]);
   
   return (
     <form
-    onSubmit={handleSubmit} className="min-h-screen bg-gradient-to-b from-slate-100 to-white text-slate-900 pt-32 pb-16 px-6 sm:px-10 lg:px-16">
+      ref={formRef}
+      onSubmit={handleSubmit}
+      className="min-h-screen bg-gradient-to-b from-slate-100 to-white text-slate-900 pt-32 pb-16 px-6 sm:px-10 lg:px-16">
       <div className="max-w-6xl mx-auto">
-        {/* {showSuccess && (
+        {showSuccess && (
           <div className="mb-10 rounded-3xl border border-green-200 bg-green-50 px-6 py-4 text-green-900 shadow-sm">
             <p className="font-semibold">Thanks for your message!</p>
             <p className="mt-1 text-sm text-green-700">We’ll be in touch shortly.</p>
           </div>
-        )} */}
+        )}
         <div className="mb-14 text-center">
           <p className="text-sm uppercase tracking-[0.35em] text-blue-600 font-semibold">Contact</p>
           <h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">Let’s build something peaceful together.</h1>
