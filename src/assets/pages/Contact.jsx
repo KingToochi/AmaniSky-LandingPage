@@ -1,14 +1,17 @@
 import { FaEnvelope, FaClock } from 'react-icons/fa';
+import { useForm, ValidationError } from "@formspree/react";
+
+  
 
 const Contact = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // TODO: handle form submission here
-  };
+  const [state, handleSubmit] = useForm("mkoedprb");
 
+  if (state.succeeded) {
+    return <p>Thanks for your message!</p>;
+  }
+  
   return (
     <form
-    action="https://formspree.io/f/mkoedprb"
     onSubmit={handleSubmit} className="min-h-screen bg-gradient-to-b from-slate-100 to-white text-slate-900 pt-32 pb-16 px-6 sm:px-10 lg:px-16">
       <div className="max-w-6xl mx-auto">
         <div className="mb-14 text-center">
@@ -56,18 +59,24 @@ const Contact = () => {
             <div className="space-y-6">
               <label className="block">
                 <span className="text-sm text-slate-200">Name</span>
-                <input type="text" placeholder="Your name" className="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-5 py-4 text-white outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+                <input name="name" type="text" placeholder="Your name" className="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-5 py-4 text-white outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" required />
               </label>
               <label className="block">
                 <span className="text-sm text-slate-200">Email</span>
-                <input type="email" placeholder="you@example.com" className="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-5 py-4 text-white outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+                <input name="email" type="email" placeholder="you@example.com" className="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-5 py-4 text-white outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" required />
               </label>
+
+              <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+              />
               <label className="block">
                 <span className="text-sm text-slate-200">Message</span>
-                <textarea rows="5" placeholder="Tell us about your project" className="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-5 py-4 text-white outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"></textarea>
+                <textarea name='message' rows="5" placeholder="Tell us about your project" className="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-950/80 px-5 py-4 text-white outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" required></textarea>
               </label>
-              <button type="submit" className="w-full rounded-full bg-blue-500 px-6 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-blue-400">
-                Send message
+              <button type="submit" className="w-full rounded-full bg-blue-500 px-6 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-blue-400" disabled={state.submitting }>
+                {state.submitting ? "Sending..." : "Send message"}
               </button>
             </div>
           </div>
