@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 const navItems = [
   { label: 'Home', page: 'home' },
   { label: 'Services', page: 'services' },
-  { label: 'Portfolio', page: 'portfolio' },
+  { label: 'Portfolio', href: 'https://portfolio.amanisky.tech' },
   { label: 'Process', page: 'process' },
   { label: 'Contact', page: 'contact' },
   { label: 'About', page: 'about' }
@@ -41,14 +41,26 @@ const Header = ({ activePage, onNavigate }) => {
 
       <ul className="hidden md:flex items-center gap-8 lg:gap-12 text-base lg:text-lg font-medium">
         {navItems.map((item) => (
-          <li key={item.page}>
-            <button
-              onClick={() => handleLinkClick(item.page)}
-              className={`relative group ${activePage === item.page ? 'text-blue-600' : 'text-slate-700 hover:text-blue-600'} transition`}
-            >
-              {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-            </button>
+          <li key={item.page || item.href || item.label}>
+            {item.href ? (
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`relative group ${activePage === item.page ? 'text-blue-600' : 'text-slate-700 hover:text-blue-600'} transition`}
+              >
+                {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+              </a>
+            ) : (
+              <button
+                onClick={() => handleLinkClick(item.page)}
+                className={`relative group ${activePage === item.page ? 'text-blue-600' : 'text-slate-700 hover:text-blue-600'} transition`}
+              >
+                {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+              </button>
+            )}
           </li>
         ))}
       </ul>
@@ -70,14 +82,25 @@ const Header = ({ activePage, onNavigate }) => {
         <div className="absolute top-full left-0 w-full bg-white/95 backdrop-blur-sm shadow-lg md:hidden animate-slideDown">
           <ul className="flex flex-col items-center gap-6 py-8 text-xl">
             {navItems.map((item) => (
-              <li key={item.page} className="w-full">
-                <button
-                  type="button"
-                  onClick={() => handleLinkClick(item.page)}
-                  className="w-full text-center py-3 text-slate-700 hover:text-blue-600 transition hover:bg-blue-50"
-                >
-                  {item.label}
-                </button>
+              <li key={item.page || item.href || item.label} className="w-full">
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full block text-center py-3 text-slate-700 hover:text-blue-600 transition hover:bg-blue-50"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => handleLinkClick(item.page)}
+                    className="w-full text-center py-3 text-slate-700 hover:text-blue-600 transition hover:bg-blue-50"
+                  >
+                    {item.label}
+                  </button>
+                )}
               </li>
             ))}
           </ul>

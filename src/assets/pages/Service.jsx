@@ -66,12 +66,12 @@ const Service = ({ onNavigate, onOpenQuote }) => {
               >
                 Talk to our team
               </button>
-              <button
+              {/* <button
                 onClick={() => onOpenQuote && onOpenQuote()}
                 className="inline-flex items-center justify-center rounded-full border border-slate-200 px-6 py-4 text-slate-700 font-semibold hover:bg-slate-50 transition"
               >
                 Get a quote
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

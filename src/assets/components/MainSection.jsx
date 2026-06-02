@@ -291,11 +291,11 @@ const MainSection = ({ onNavigate }) => {
                                     <BsArrowRight className="group-hover:translate-x-1 transition-transform" />
                                 </span>
                             </button>
-                            <button 
+                            <a href="https://portfolio.amanisky.tech"
                                 onClick={() => onNavigate && onNavigate('portfolio')}
                                 className="inline-flex items-center gap-2 bg-transparent border-2 border-white/30 px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 transition-all duration-300">
                                 View Our Portfolio
-                            </button>
+                            </a>
                         </div>
 
                         <div className={`flex flex-col sm:flex-row gap-8 justify-center items-center text-gray-300 transition-all duration-700 delay-600 ${isVisible['cta'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
