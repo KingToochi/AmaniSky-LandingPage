@@ -36,7 +36,7 @@ const Header = ({ activePage, onNavigate }) => {
       scrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
     }`}>
       <button onClick={() => onNavigate('home')} className="text-2xl md:text-3xl font-bold text-left">
-        AmaniSky<span className="text-stone-500 font-light">.tech</span>
+        AmaniSky NexTech
       </button>
 
       <ul className="hidden md:flex items-center gap-8 lg:gap-12 text-base lg:text-lg font-medium">

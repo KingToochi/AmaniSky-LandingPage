@@ -8,7 +8,7 @@ const About = () => {
           <p className="text-sm uppercase tracking-[0.35em] text-blue-600 font-semibold">About us</p>
           <h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">A partnership built around calm, craft, and clarity.</h1>
           <p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
-            AmaniSky is a digital studio founded to help businesses move forward without noise. We create thoughtful experiences that feel easy to use and easy to love.
+            AmaniSky NexTech is a digital studio founded to help businesses move forward without noise. We create thoughtful experiences that feel easy to use and easy to love.
           </p>
         </div>
 

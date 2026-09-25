@@ -65,7 +65,7 @@ const MainSection = ({ onNavigate }) => {
                                 </h1>
                                 
                                 <p className="text-xl text-center mb-4 text-blue-100">
-                                    At AmaniSky, we believe that technology should feel as clear and open as the sky.
+                                    At AmaniSky NexTech, we believe that technology should feel as clear and open as the sky.
                                 </p>
                                 
                                 <p className="text-lg text-center max-w-3xl mx-auto text-blue-50">
@@ -143,7 +143,7 @@ const MainSection = ({ onNavigate }) => {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center text-white mb-16">
                             <h2 className={`text-4xl md:text-5xl font-bold mb-4 transition-all duration-700 ${isVisible['advantage'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                                The AmaniSky Advantage
+                                The AmaniSky NexTech Advantage
                             </h2>
                             <p className={`text-xl text-blue-100 transition-all duration-700 delay-200 ${isVisible['advantage'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                                 Peace of mind comes standard.
